@@ -1,0 +1,7 @@
+{
+  "scripts": {
+    "start:server": "jsonserver --watch server/db.json",
+    "start:client": "parcel client/index.html"
+  },
+  "private": true
+}
