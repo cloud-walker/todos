@@ -3,7 +3,7 @@ import React from 'react'
 import {useTodosQuery} from '../todos-resource'
 
 export const TodosList = () => {
-  const {status, error, data, isFetching} = useTodosQuery()
+  const {status, error, data} = useTodosQuery()
 
   if (status == 'loading') {
     return <h2>Loading...</h2>
@@ -13,18 +13,15 @@ export const TodosList = () => {
     return <h2>Error: {error.message}</h2>
   }
 
+  if (!data.length) {
+    return <div>Woah! Niente da fare!</div>
+  }
+
   return (
-    <>
-      {!data.length ? (
-        <div>Woah! Niente da fare!</div>
-      ) : (
-        <ul>
-          {data.map(todo => (
-            <li key={todo.id}>{todo.title}</li>
-          ))}
-        </ul>
-      )}
-      <div>{isFetching ? 'Fetching...' : null}</div>
-    </>
+    <ul>
+      {data.map(todo => (
+        <li key={todo.id}>{todo.title}</li>
+      ))}
+    </ul>
   )
 }
