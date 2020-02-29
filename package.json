@@ -1,7 +1,16 @@
 {
   "scripts": {
-    "start:server": "jsonserver --watch server/db.json",
+    "start:server": "json-server --watch server/db.json",
     "start:client": "parcel client/index.html"
   },
-  "private": true
+  "private": true,
+  "devDependencies": {
+    "parcel": "^2.0.0-alpha.3.2"
+  },
+  "dependencies": {
+    "json-server": "^0.16.1",
+    "react": "^16.13.0",
+    "react-dom": "^16.13.0",
+    "react-query": "^1.0.7"
+  }
 }
