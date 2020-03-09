@@ -1,6 +1,6 @@
 import React from 'react'
 
-import {useTodoMutation} from '../todos-resource'
+import {useTodoMutation} from '../todos'
 
 export const AddTodo = () => {
   const [mutate] = useTodoMutation()

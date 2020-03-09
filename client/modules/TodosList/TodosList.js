@@ -1,6 +1,6 @@
 import React from 'react'
 
-import {useTodosQuery} from '../todos-resource'
+import {useTodosQuery} from '../todos'
 
 export const TodosList = () => {
   const {status, error, data} = useTodosQuery()
