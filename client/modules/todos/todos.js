@@ -1,4 +1,5 @@
 import {useQuery, useMutation, queryCache} from 'react-query'
+import {provideDeps} from 'react-depree'
 
 const ENDPOINT = 'http://localhost:3000/todos'
 
@@ -11,7 +12,11 @@ const createTodo = data =>
     headers: {'Content-Type': 'application/json'},
   }).then(res => res.json())
 
-export const useTodosQuery = () => useQuery(ENDPOINT, fetchTodos)
+export const useTodosQuery = () => {
+  const {fetchTodos} = useTodosQuery.useDeps()
+  return useQuery(ENDPOINT, fetchTodos)
+}
+useTodosQuery.useDeps = provideDeps({fetchTodos})
 
 export const useTodoMutation = () =>
   useMutation(createTodo, {
@@ -19,3 +24,4 @@ export const useTodoMutation = () =>
       queryCache.refetchQueries(ENDPOINT)
     },
   })
+useTodoMutation.useDeps = provideDeps({createTodo})
