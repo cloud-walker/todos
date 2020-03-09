@@ -1,10 +1,12 @@
 {
   "scripts": {
+    "test": "jest",
     "start:server": "json-server --watch server/db.json",
     "start:client": "parcel client/index.html"
   },
   "private": true,
   "devDependencies": {
+    "jest": "^25.1.0",
     "parcel": "^2.0.0-alpha.3.2"
   },
   "dependencies": {
