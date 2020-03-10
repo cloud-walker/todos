@@ -17,8 +17,11 @@ export const AddTodo = () => {
 
   return (
     <form onSubmit={handleSubmit} noValidate>
-      <input type="text" value={value} onChange={handleChange} />
-      <input type="submit" />
+      <label>
+        <span>Todo</span>
+        <input type="text" value={value} onChange={handleChange} />
+      </label>
+      <input type="submit" value="Submit" />
     </form>
   )
 }

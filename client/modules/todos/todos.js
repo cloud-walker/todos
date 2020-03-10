@@ -18,10 +18,12 @@ export const useTodosQuery = () => {
 }
 useTodosQuery.useDeps = provideDeps({fetchTodos})
 
-export const useTodoMutation = () =>
-  useMutation(createTodo, {
+export const useTodoMutation = () => {
+  const {createTodo} = useTodoMutation.useDeps()
+  return useMutation(createTodo, {
     onSuccess: () => {
       queryCache.refetchQueries(ENDPOINT)
     },
   })
+}
 useTodoMutation.useDeps = provideDeps({createTodo})
