@@ -1,0 +1,21 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`it should work properly 1`] = `
+<form>
+  <label
+    class="blue"
+    for="title"
+  >
+    Add your todo
+  </label>
+  <input
+    id="title"
+    type="text"
+    value=""
+  />
+  <input
+    type="submit"
+    value="Add"
+  />
+</form>
+`;
