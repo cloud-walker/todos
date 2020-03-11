@@ -12,3 +12,8 @@ export const todosStub = [
     id: 2,
   },
 ]
+
+export const fetchTodosMock = () =>
+  new Promise(resolve => {
+    setTimeout(resolve, 250, todosStub)
+  })
