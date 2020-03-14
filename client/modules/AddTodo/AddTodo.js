@@ -1,25 +1,22 @@
 import React from 'react'
+import {useForm} from 'react-hook-form'
 
 import {useTodoMutation} from '../todos'
 
 export const AddTodo = () => {
+  const {handleSubmit: wrapSubmitHandler, register, setValue} = useForm()
   const [mutate] = useTodoMutation()
-  const [value, setValue] = React.useState('')
 
-  const handleChange = e => {
-    setValue(e.target.value)
-  }
-  const handleSubmit = e => {
-    e.preventDefault()
-    mutate({title: value})
-    setValue('')
-  }
+  const handleSubmit = wrapSubmitHandler(data => {
+    setValue('title', '')
+    mutate(data)
+  })
 
   return (
-    <form onSubmit={handleSubmit} noValidate>
+    <form onSubmit={handleSubmit}>
       <label>
         <span>Todo</span>
-        <input type="text" value={value} onChange={handleChange} />
+        <input type="text" name="title" ref={register} />
       </label>
       <input type="submit" value="Submit" />
     </form>
