@@ -6,17 +6,17 @@ import {AddTodo} from '.'
 import {useTodoMutation} from '../todos'
 import {createTodoMock} from '../todos/mocks'
 
-const Subject = ({createTodo}) => {
-  return (
+const setupTest = ({createTodo}) => {
+  return render(
     <DepsProvider depsMap={[[useTodoMutation, {createTodo}]]}>
       <AddTodo />
-    </DepsProvider>
+    </DepsProvider>,
   )
 }
 
 test('it should render properly', async () => {
   const createTodo = jest.fn(createTodoMock)
-  render(<Subject createTodo={createTodo} />)
+  setupTest({createTodo})
 
   const inputText = screen.getByLabelText('Todo')
 
