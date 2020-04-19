@@ -2061,9 +2061,9 @@
     pretty-format "^25.1.0"
 
 "@testing-library/jest-dom@^5.1.1":
-  version "5.4.0"
-  resolved "https://registry.yarnpkg.com/@testing-library/jest-dom/-/jest-dom-5.4.0.tgz#9ac08b6dc7a750fe3bf7658116dd246890f836d2"
-  integrity sha512-dsXGGNiZhZVrBgQ7lxznZmzKvJ3DfhmTH7jkgfyDCjgyGbviLrGVWLQO6rXYfootU81mw96HaYH2L7DthJEC7A==
+  version "5.5.0"
+  resolved "https://registry.yarnpkg.com/@testing-library/jest-dom/-/jest-dom-5.5.0.tgz#4707023e8f572021e8a84f65721303ff60828d88"
+  integrity sha512-7sWHrpxG4Yd8TmryI7Rtbx8Ff4mbs3ASye3oshQIuHvsCR+QHgr7rTR/PfeXvOmwUwR36wSTTAvrLKsPmr6VEQ==
   dependencies:
     "@babel/runtime" "^7.9.2"
     "@types/testing-library__jest-dom" "^5.0.2"
@@ -7460,9 +7460,9 @@ rc@^1.2.7, rc@^1.2.8:
     strip-json-comments "~2.0.1"
 
 react-depree@^0.9.1:
-  version "0.9.1"
-  resolved "https://registry.yarnpkg.com/react-depree/-/react-depree-0.9.1.tgz#db94680c0c9ea1acbe4d2d4a5d0995bc615211c4"
-  integrity sha512-/LSP5T5nz3Hi2/O5EdWL6C6d5Hnm+02M+u6JOD2ELD18HyefbtQcai+lvTg4UpoUDTxeOp0Lf+9s6oR4imDPYA==
+  version "0.9.2"
+  resolved "https://registry.yarnpkg.com/react-depree/-/react-depree-0.9.2.tgz#756630529dfe33dc2d1214508330137987c6ccc8"
+  integrity sha512-evRHrzzIFQwJzfTKKDjuWf2rViaeVV1f5ixQpyJuq+GKuFcO1yt1W7t72X4MvkoyQ84AMK31aiXF25Kn2bHv1Q==
 
 react-dom@^16.13.0:
   version "16.13.1"
@@ -7485,11 +7485,12 @@ react-is@^16.12.0, react-is@^16.8.1:
   integrity sha512-24e6ynE2H+OKt4kqsOvNd8kBpV65zoxbA4BVsEOB3ARVWQki/DHzaUoC5KuON/BiccDaCCTZBuOcfZs70kR8bQ==
 
 react-query@^1.0.7:
-  version "1.2.1"
-  resolved "https://registry.yarnpkg.com/react-query/-/react-query-1.2.1.tgz#dfc9cc4afe3253b8df9f76d466fad5f50d06a535"
-  integrity sha512-2x1D1U1FOfLqlgTxpPCWyVkVE85eqskOabSasjRODDoyKS0TXCF6kQyq3P1/0TkFEUwTQIjV9hDz2MDaAJVqMw==
+  version "1.2.7"
+  resolved "https://registry.yarnpkg.com/react-query/-/react-query-1.2.7.tgz#9c18fd1d6db6f961421b00b14d8ce9b49753fb53"
+  integrity sha512-oaVpIxAr3fepE1HRx9rEbQKHMwTT4MkVf+0lgkjWBY4MnIKY0/ozM/ImW1T5iJvgFh0AFI+KCPljR9FER5hy8g==
   dependencies:
     "@scarf/scarf" "^0.1.3"
+    ts-toolbelt "^6.4.2"
 
 react-refresh@^0.6.0:
   version "0.6.0"
@@ -8685,6 +8686,11 @@ trough@^1.0.0:
   version "1.0.5"
   resolved "https://registry.yarnpkg.com/trough/-/trough-1.0.5.tgz#b8b639cefad7d0bb2abd37d433ff8293efa5f406"
   integrity sha512-rvuRbTarPXmMb79SmzEp8aqXNKcK+y0XaB298IXueQ8I2PsrATcPBCSPyK/dDNa2iWOhKlfNnOjdAOTBU/nkFA==
+
+ts-toolbelt@^6.4.2:
+  version "6.5.1"
+  resolved "https://registry.yarnpkg.com/ts-toolbelt/-/ts-toolbelt-6.5.1.tgz#1316b8c6522797c0bee289ca5deaa159af846231"
+  integrity sha512-zjnZ/vy1eUA0li3H0JXecl0R3jiP42snpLimsrppt9V3LLbM4NM4jMgjXQ4S67hvehq+r9CxpX4Wj6RnFRzReA==
 
 tslib@^1.9.0:
   version "1.11.1"
