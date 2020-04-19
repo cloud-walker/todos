@@ -2,6 +2,7 @@ import {useQuery, useMutation, queryCache} from 'react-query'
 import {provideDeps} from 'react-depree'
 
 const ENDPOINT = 'http://localhost:3000/todos'
+const QUERY_KEY = ENDPOINT
 
 const fetchTodos = () => fetch(ENDPOINT).then(res => res.json())
 
@@ -14,16 +15,24 @@ const createTodo = data =>
 
 export const useTodosQuery = () => {
   const {fetchTodos} = useTodosQuery.useDeps()
-  return useQuery(ENDPOINT, fetchTodos)
+  return useQuery(QUERY_KEY, fetchTodos)
 }
 useTodosQuery.useDeps = provideDeps({fetchTodos})
 
 export const useTodoMutation = () => {
   const {createTodo} = useTodoMutation.useDeps()
   return useMutation(createTodo, {
-    onSuccess: () => {
-      queryCache.refetchQueries(ENDPOINT)
+    onMutate: todo => {
+      if (!todo.id) return
+
+      const prevTodos = queryCache.getQueryData(QUERY_KEY)
+
+      queryCache.setQueryData(QUERY_KEY, old => [...old, todo])
+
+      return () => queryCache.setQueryData(QUERY_KEY, prevTodos)
     },
+    onError: (err, todo, rollback) => rollback(),
+    onSettled: () => queryCache.refetchQueries(QUERY_KEY),
   })
 }
 useTodoMutation.useDeps = provideDeps({createTodo})
