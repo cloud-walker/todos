@@ -7459,10 +7459,10 @@ rc@^1.2.7, rc@^1.2.8:
     minimist "^1.2.0"
     strip-json-comments "~2.0.1"
 
-react-depree@^0.9.1:
-  version "0.9.2"
-  resolved "https://registry.yarnpkg.com/react-depree/-/react-depree-0.9.2.tgz#756630529dfe33dc2d1214508330137987c6ccc8"
-  integrity sha512-evRHrzzIFQwJzfTKKDjuWf2rViaeVV1f5ixQpyJuq+GKuFcO1yt1W7t72X4MvkoyQ84AMK31aiXF25Kn2bHv1Q==
+react-depree@^0.10.0:
+  version "0.10.0"
+  resolved "https://registry.yarnpkg.com/react-depree/-/react-depree-0.10.0.tgz#f70254e1aa0398865a53c948e24083584c75bc80"
+  integrity sha512-X8YfxlBK/91MQFXK6AfOota4wVEmEucwIkvJdJkhzIYvzDQOFeMi1uPtBRItjjFnueS6DRHGTPyn35L6EkmOYQ==
 
 react-dom@^16.13.0:
   version "16.13.1"
