@@ -3,3 +3,4 @@ node_modules
 server/db.json
 
 .parcel-cache
+dist
