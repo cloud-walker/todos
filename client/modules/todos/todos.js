@@ -1,5 +1,6 @@
 import {useQuery, useMutation, queryCache} from 'react-query'
-import {provideDeps} from 'react-depree'
+
+import {defineDeps, getDeps} from '../depree'
 
 const ENDPOINT = 'http://localhost:3000/todos'
 const QUERY_KEY = ENDPOINT
@@ -14,14 +15,12 @@ const createTodo = data =>
   }).then(res => res.json())
 
 export const useTodosQuery = () => {
-  const {fetchTodos} = useTodosQuery.useDeps()
-  return useQuery(QUERY_KEY, fetchTodos)
+  return useQuery(QUERY_KEY, getDeps(useTodosQuery).fetchTodos)
 }
-useTodosQuery.useDeps = provideDeps({fetchTodos})
+defineDeps(useTodosQuery, {fetchTodos})
 
 export const useTodoMutation = () => {
-  const {createTodo} = useTodoMutation.useDeps()
-  return useMutation(createTodo, {
+  return useMutation(getDeps(useTodoMutation).createTodo, {
     onMutate: todo => {
       if (!todo.id) return
 
@@ -35,4 +34,4 @@ export const useTodoMutation = () => {
     onSettled: () => queryCache.refetchQueries(QUERY_KEY),
   })
 }
-useTodoMutation.useDeps = provideDeps({createTodo})
+defineDeps(useTodoMutation, {createTodo})

@@ -1,17 +1,15 @@
 import {render, screen, fireEvent, waitFor} from '@testing-library/react'
 import React from 'react'
-import {DepsProvider} from 'react-depree'
 
-import {AddTodo} from '.'
+import {overrideDeps} from '../depree'
 import {useTodoMutation} from '../todos'
 import {createTodoMock} from '../todos/mocks'
+import {AddTodo} from '.'
 
 const setupTest = ({createTodo}) => {
-  return render(
-    <DepsProvider depsMap={[[useTodoMutation, {createTodo}]]}>
-      <AddTodo />
-    </DepsProvider>,
-  )
+  overrideDeps(useTodoMutation, {createTodo})
+
+  return render(<AddTodo />)
 }
 
 test('it should render properly', async () => {
